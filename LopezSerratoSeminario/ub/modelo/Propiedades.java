@@ -3,7 +3,6 @@ import java.io.*;
 
 import java.util.Properties;
 
-import javax.swing.JFileChooser;
 
 public class Propiedades {
 	
