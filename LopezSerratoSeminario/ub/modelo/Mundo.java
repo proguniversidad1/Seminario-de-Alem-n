@@ -6,12 +6,16 @@ public class Mundo {
 	
 	private Archivo archivo;
 	
+	private Propiedades propiedades;
 	
-	public Mundo() {
+	
+	public Mundo(String pRutaNombres, String pRutaSalida) {
 		
 		primerSeminario = new Seminario();
 		
-		archivo = new Archivo();
+		archivo = new Archivo(pRutaNombres, pRutaSalida);
+		
+		propiedades = new Propiedades();
 	
 	}
 	
@@ -32,6 +36,16 @@ public class Mundo {
 
 	public void setPrimerSeminario(Seminario primerSeminario) {
 		this.primerSeminario = primerSeminario;
+	}
+
+
+	public Propiedades getPropiedades() {
+		return propiedades;
+	}
+
+
+	public void setPropiedades(Propiedades propiedades) {
+		this.propiedades = propiedades;
 	}
 
 	

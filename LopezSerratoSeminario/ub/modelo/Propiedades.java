@@ -1,16 +1,16 @@
 package modelo;
-import data.*;
 import java.io.*;
 
 import java.util.Properties;
 
+import javax.swing.JFileChooser;
+
 public class Propiedades {
 	
 	private Properties prop = new Properties();
-		
-	private String archivoprop = "C:\\Users\\aulamovil09\\git\\Seminario-de-Alem-n\\LopezSerratoSeminario\\ub\\data\\archivo.properties";
 	
-	public void setPropiedades() {
+	
+	public void setPropiedades(String pRutaProp) {
 			
 		try {
 			
@@ -20,7 +20,7 @@ public class Propiedades {
 		
 			prop.setProperty("ArchivoEntrada", "nombres.txt");
 		
-			prop.store(new FileOutputStream(archivoprop), null);
+			prop.store(new FileOutputStream(pRutaProp), null);
 			
 		}
 		
@@ -31,12 +31,13 @@ public class Propiedades {
 		}
 		
 	}
+
 	
-	public void getPropiedades() {
+	public void getPropiedades(String pRutaProp) {
 		
 		try {
 			
-			prop.load(new FileInputStream(archivoprop));
+			prop.load(new FileInputStream(pRutaProp));
 			
 			prop.list(System.out);
 			
