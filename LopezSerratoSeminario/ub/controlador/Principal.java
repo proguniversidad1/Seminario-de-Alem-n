@@ -4,8 +4,11 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		@SuppressWarnings("unused")
-		Controlador controlador = new Controlador();
+		
+		System.out.println("holi");
+		
+		//@SuppressWarnings("unused")
+		//Controlador controlador = new Controlador();
 
 	}
 
