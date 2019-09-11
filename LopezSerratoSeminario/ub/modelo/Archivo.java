@@ -1,6 +1,10 @@
 package modelo;
 
 import java.io.*;
+
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+
 import data.*;
 
 public class Archivo {
@@ -17,12 +21,42 @@ public class Archivo {
 	
 	private PrintWriter printWriter;
 	
+	private JFileChooser buscador;
+	
+	
+	
 	public Archivo() {
 		
-		nombres = new File("C:\\Users\\aulamovil09\\git\\Seminario-de-Alem-n\\LopezSerratoSeminario\\ub\\data\\nombres.txt");
+		buscador = new JFileChooser();
 		
-		salida = new File("C:\\Users\\aulamovil09\\git\\Seminario-de-Alem-n\\LopezSerratoSeminario\\ub\\data\\salida.txt");
+		nombres = new File(darRutaNombres());
 		
+		salida = new File(darRutaSalida());
+		
+		
+	}
+	
+	public String darRutaNombres() {
+		
+		buscador.showOpenDialog(buscador);
+		
+		System.out.println("Elija el archivo de nombres");
+		
+		String rutaNombres = buscador.getSelectedFile().getAbsolutePath();
+		
+		return rutaNombres;
+	
+	}
+	
+	public String darRutaSalida() {
+		
+		buscador.showSaveDialog(buscador);
+		
+		System.out.println("Elija donde guardar la salida");
+		
+		String rutaSalida = buscador.getSelectedFile().getAbsolutePath();
+		
+		return rutaSalida;
 	}
 	
 	public int darNumEstudiantes() {
