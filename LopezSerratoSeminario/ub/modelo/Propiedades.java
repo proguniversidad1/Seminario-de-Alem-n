@@ -8,7 +8,7 @@ public class Propiedades {
 	
 	private Properties prop = new Properties();
 		
-	private String archivoprop = "C:\\Users\\aulamovil09\\Desktop\\prop - copia\\LopezSerratoSeminario\\ub\\data\\archivo.properties";
+	private String archivoprop = "/LopezSerratoSeminario/ub/data/archivo.properties";
 	
 	public void setPropiedades() {
 			

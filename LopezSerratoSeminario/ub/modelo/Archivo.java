@@ -18,9 +18,9 @@ public class Archivo {
 	
 	public Archivo() {
 		
-		nombres = new File("C:\\Users\\aulamovil09\\Desktop\\prop - copia\\LopezSerratoSeminario\\ub\\data\\nombres.txt");
+		nombres = new File("/LopezSerratoSeminario/ub/data/nombres.txt");
 		
-		salida = new File("C:\\Users\\aulamovil09\\Desktop\\prop - copia\\LopezSerratoSeminario\\ub\\data\\salida.txt");
+		salida = new File("/LopezSerratoSeminario/ub/data/salida.txt");
 		
 	}
 	
