@@ -1,6 +1,7 @@
 package modelo;
 
 import java.io.*;
+import data.*;
 
 public class Archivo {
 	
@@ -18,9 +19,9 @@ public class Archivo {
 	
 	public Archivo() {
 		
-		nombres = new File("/LopezSerratoSeminario/ub/data/nombres.txt");
+		nombres = new File("C:\\Users\\aulamovil09\\git\\Seminario-de-Alem-n\\LopezSerratoSeminario\\ub\\data\\nombres.txt");
 		
-		salida = new File("/LopezSerratoSeminario/ub/data/salida.txt");
+		salida = new File("C:\\Users\\aulamovil09\\git\\Seminario-de-Alem-n\\LopezSerratoSeminario\\ub\\data\\salida.txt");
 		
 	}
 	

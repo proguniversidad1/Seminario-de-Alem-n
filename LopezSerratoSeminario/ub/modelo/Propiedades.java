@@ -1,5 +1,5 @@
 package modelo;
-
+import data.*;
 import java.io.*;
 
 import java.util.Properties;
@@ -8,7 +8,7 @@ public class Propiedades {
 	
 	private Properties prop = new Properties();
 		
-	private String archivoprop = "/LopezSerratoSeminario/ub/data/archivo.properties";
+	private String archivoprop = "C:\\Users\\aulamovil09\\git\\Seminario-de-Alem-n\\LopezSerratoSeminario\\ub\\data\\archivo.properties";
 	
 	public void setPropiedades() {
 			
