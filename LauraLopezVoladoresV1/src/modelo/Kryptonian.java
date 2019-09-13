@@ -1,7 +1,3 @@
 package modelo;
 
-public class Kryptonian extends Animal{
-	
-	
-
-}
+public class Kryptonian extends Animal{}

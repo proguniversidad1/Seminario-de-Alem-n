@@ -2,36 +2,17 @@ package modelo;
 
 public class Superman extends Kryptonian implements Flyer{
 
-	@Override
-	public String takeOff() {
-		// TODO Auto-generated method stub
-		return "Superman está despegando";
-	}
+	public String takeOff() {return "Superman está despegando";}
 
-	@Override
-	public String land() {
-		// TODO Auto-generated method stub
-		return "Superman está aterrizando";
-	}
+	public String land() {return "Superman está aterrizando";}
 
-	@Override
-	public String fly() {
-		// TODO Auto-generated method stub
-		return "Es un avión , es una ave, Nooo... es Superman";
-	}
+	public String fly() {return "Es un avión , es una ave, Nooo... es Superman";}
 	
-	public String leapBuilding() {
-		return "Superman saltó un edificio.";
-	}
+	public String leapBuilding() {return "Superman saltó un edificio.";}
 	
-	public String stopBullet() {
-		return "Sepuerman paró la bala.";
-	}
-	@Override
-	public String eat() {
-		// TODO Auto-generated method stub
-		return super.eat();
-	}
+	public String stopBullet() {return "Sepuerman paró la bala.";}
+
+	public String eat() {return super.eat();}
 	
 
 }
