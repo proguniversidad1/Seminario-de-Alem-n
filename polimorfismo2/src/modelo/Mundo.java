@@ -4,14 +4,11 @@ public class Mundo {
 	
 	private Persona personas[];
 	
-	public Mundo() {
-		
-		personas = new Persona[3];
-		
+	public Mundo() {		
+		personas = new Persona[3];		
 	}
 	
-	public String hacerPolimorfismo() {
-		
+	public String hacerPolimorfismo() {		
 		String linea = "";
 		personas[0] = new Persona();
 		personas[1] = new Alumno();
@@ -20,9 +17,4 @@ public class Mundo {
 		linea += personas[i]+" \n";
 		return linea;
 		}
-
-
-	
-	
-
 }
