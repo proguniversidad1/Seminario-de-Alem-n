@@ -3,10 +3,30 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Controlador implements ActionListener{
+import modelo.Mundo;
+import vistaGUI.InterfazGUI;
+import vistaGUI.PanelEntrada;
 
-	public void actionPerformed(ActionEvent e) {
+public class Controlador implements ActionListener{
+	
+	@SuppressWarnings("unused")
+	private Mundo bd;
+	
+	private InterfazGUI gui;
+	
+	public Controlador() {
 		
+		bd = new Mundo();
+		gui = new InterfazGUI(this);
+		
+		gui.setVisible(true);
+	}
+
+	public void actionPerformed(ActionEvent evento) {
+		gui.getPanelEntrada();
+		if (evento.getActionCommand().equals(PanelEntrada.CONVERTIR)) {
+			gui.getPanelResultados().getTxtMonto().setText(gui.getPanelEntrada().getTxtNumero().getText()+" Procesado");
+		}
 	}
 
 }
