@@ -15,12 +15,14 @@ public class Controlador implements ActionListener{
 	
 	private InterfazGUI gui;
 	
-	int contador=2;
-	
+	private int contador=2;
+	private int[] numerosParaAdivinar;
 	public Controlador() {
 		
 		mundo = new Mundo();
 		gui = new InterfazGUI(this);
+		
+		numerosParaAdivinar = mundo.getJuego().numerosPorAdivinar();
 		
 		gui.setVisible(true);
 	}
@@ -30,7 +32,7 @@ public class Controlador implements ActionListener{
 		
 		gui.getPanelEntrada();		
 		
-		int[] numerosParaAdivinar = mundo.getJuego().numerosPorAdivinar();
+		
 			
 		if (evento.getActionCommand().equals(PanelEntrada.PROBAR)) {
 			
@@ -51,6 +53,8 @@ public class Controlador implements ActionListener{
 				if (fijas==4) {
 					JOptionPane.showMessageDialog(null, "¡Felidades, lo adivinaste!");
 				}
+				
+				System.out.println(numerosParaAdivinar[0] + " " + numerosParaAdivinar[1] + " " + numerosParaAdivinar[2] + " " + numerosParaAdivinar[3]);
 				
 				gui.getPanelEntrada().getTxtNumerosParaProbar0().setText("");				
 					
