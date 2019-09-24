@@ -1,19 +1,6 @@
 package modelo;
 
-public class Juego {
-	
-	//private int[] numerosPorAdivinar;
-	
-	public Juego() {
-
-		//numerosPorAdivinar = new int[4];
-		/*numerosPorAdivinar[0]=3;
-		numerosPorAdivinar[1]=2;
-		numerosPorAdivinar[2]=7;
-		numerosPorAdivinar[3]=8;*/
-		
-	}
-	
+public class Juego {	
 
 	public int[] numerosPorAdivinar() {
 		
@@ -21,8 +8,20 @@ public class Juego {
 		
 		for (int i = 0; i < numerosPorAdivinar.length; i++) {
 			
-			
 			numerosPorAdivinar[i] = 1 + (int)(Math.random() * ((9 - 1) + 1));
+
+		}
+		
+		while(  numerosPorAdivinar[0]==numerosPorAdivinar[1] || numerosPorAdivinar[0]==numerosPorAdivinar[2]||
+				numerosPorAdivinar[0]==numerosPorAdivinar[3] ||	numerosPorAdivinar[1]==numerosPorAdivinar[2]|| 
+				numerosPorAdivinar[1]==numerosPorAdivinar[3] || numerosPorAdivinar[2]==numerosPorAdivinar[3]) {
+			
+			for (int i = 0; i < numerosPorAdivinar.length; i++) {
+				
+				numerosPorAdivinar[i] = 1 + (int)(Math.random() * ((9 - 1) + 1));
+
+			}
+			
 		}
 		
 		return numerosPorAdivinar;
