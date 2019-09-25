@@ -1,6 +1,6 @@
 package controlador;
 
-import modelo.Mundo;
+import mundo.Mundo;
 import vista.Interfaz;
 
 public class Controlador {

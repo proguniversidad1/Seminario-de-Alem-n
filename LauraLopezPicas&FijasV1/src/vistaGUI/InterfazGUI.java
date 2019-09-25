@@ -17,7 +17,7 @@ public class InterfazGUI extends JFrame{
 		
 		setSize(400, 200);
 		setResizable(false);
-		setTitle("Titulo de la Ventana Principal");
+		setTitle("Picas & Fijas");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());

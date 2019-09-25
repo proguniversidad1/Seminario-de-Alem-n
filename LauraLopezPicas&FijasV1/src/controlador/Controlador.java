@@ -16,6 +16,7 @@ public class Controlador implements ActionListener{
 	private InterfazGUI gui;
 	
 	private int contador=2;
+	
 	private int[] numerosParaAdivinar;
 	public Controlador() {
 		
