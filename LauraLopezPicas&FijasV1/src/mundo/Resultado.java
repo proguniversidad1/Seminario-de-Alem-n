@@ -18,6 +18,8 @@ public class Resultado {
 	
 	public void escribirResultados(int[] entradaJugador){
 		
+		int k = 0;
+		
 		try {
 			
 			fileWriter = new FileWriter(resultados);
@@ -28,10 +30,11 @@ public class Resultado {
 			
 			for (int i = 0; i < entradaJugador.length ; i++) {
 				
-				resultados[i] = entradaJugador[i]+"";
-				
+				resultados[i] = entradaJugador[i]+ " ";
 					
-				printWriter.println(resultados[i]);
+					printWriter.println(resultados[i]);
+					
+				
 				
 				
 				}		
