@@ -22,12 +22,15 @@ public class Controlador implements ActionListener{
 	private int[] resultadosImprimir;
 	
 	private int[] numerosParaAdivinar;
+	private String ruta;
 	
 	public Controlador() {
 		
-		gui = new InterfazGUI(this);		
+		gui = new InterfazGUI(this);	
 		
-		mundo = new Mundo( gui.getvResultados().darRutaResultados());
+		ruta = gui.getvResultados().darRutaResultados();
+		
+		mundo = new Mundo(ruta );
 		
 		numerosParaAdivinar = mundo.getJuego().numerosPorAdivinar();
 		
@@ -93,7 +96,9 @@ public class Controlador implements ActionListener{
 			}
 		
 		
-		}	impResultado();	
+		}	impResultado();
+		
+			gui.imprimirResultados(mundo.getLec().leerResultados(ruta));
 	}
 	
 	public void impResultado() {

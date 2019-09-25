@@ -3,6 +3,7 @@ package vistaGUI;
 import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import controlador.Controlador;
 
@@ -48,6 +49,10 @@ public class InterfazGUI extends JFrame{
 	}
 	public PanelResultados getPanelResultados() {
 		return panelResultados;
+	}
+
+	public void imprimirResultados(String resultado){
+		JOptionPane.showMessageDialog(null, "Los resultados son: "+resultado);
 	}
 
 }
