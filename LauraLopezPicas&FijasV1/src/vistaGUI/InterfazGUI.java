@@ -12,7 +12,16 @@ public class InterfazGUI extends JFrame{
 	
 	PanelEntrada panelEntrada;
 	PanelResultados panelResultados;
+	ventanaResultados vResultados;
 	
+	public ventanaResultados getvResultados() {
+		return vResultados;
+	}
+
+	public void setvResultados(ventanaResultados vResultados) {
+		this.vResultados = vResultados;
+	}
+
 	public InterfazGUI(Controlador control) {
 		
 		setSize(400, 200);
@@ -21,6 +30,8 @@ public class InterfazGUI extends JFrame{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
+		
+		vResultados = new ventanaResultados();
 		
 		panelEntrada = new PanelEntrada();
 		add(panelEntrada, BorderLayout.NORTH);

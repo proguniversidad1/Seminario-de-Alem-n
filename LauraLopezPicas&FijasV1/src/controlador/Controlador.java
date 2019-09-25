@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import modelo.Mundo;
+import mundo.Mundo;
 import vistaGUI.InterfazGUI;
 import vistaGUI.PanelEntrada;
 
@@ -17,22 +17,31 @@ public class Controlador implements ActionListener{
 	
 	private int contador=2;
 	
+	private int k=0;
+	
+	private int[] resultadosImprimir;
+	
 	private int[] numerosParaAdivinar;
+	
 	public Controlador() {
 		
-		mundo = new Mundo();
-		gui = new InterfazGUI(this);
+		gui = new InterfazGUI(this);		
+		
+		mundo = new Mundo( gui.getvResultados().darRutaResultados());
 		
 		numerosParaAdivinar = mundo.getJuego().numerosPorAdivinar();
 		
 		gui.setVisible(true);
+		
+		resultadosImprimir = new int[40];
+		
+		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent evento) {
 		
-		gui.getPanelEntrada();		
-		
+		gui.getPanelEntrada();	
 		
 			
 		if (evento.getActionCommand().equals(PanelEntrada.PROBAR)) {
@@ -42,6 +51,7 @@ public class Controlador implements ActionListener{
 				int numerosParaProbar[] = new int[4];
 				
 				for (int i = 0; i < numerosParaProbar.length; i++) {
+					
 					numerosParaProbar[i] = Integer.parseInt(gui.getPanelEntrada().getTxtNumerosParaProbar0().getText().substring(i, i+1));
 				}
 						
@@ -53,7 +63,10 @@ public class Controlador implements ActionListener{
 				
 				if (fijas==4) {
 					JOptionPane.showMessageDialog(null, "¡Felidades, lo adivinaste!");
-				}
+				}				
+				
+				
+				
 				
 				System.out.println(numerosParaAdivinar[0] + " " + numerosParaAdivinar[1] + " " + numerosParaAdivinar[2] + " " + numerosParaAdivinar[3]);
 				
@@ -61,18 +74,32 @@ public class Controlador implements ActionListener{
 					
 				gui.getPanelEntrada().getLabIntento1().setText("Intento "+contador);
 				
+				
+					for (int j = 0; j < numerosParaProbar.length; j++) {
+						resultadosImprimir[k] = numerosParaProbar[j];
+						k++;
+					}
+				
+				
 				contador++;	
+
 				
 			} else {
 				
 				String nums = numerosParaAdivinar[0] + " " + numerosParaAdivinar[1] + " " + numerosParaAdivinar[2] + " " + numerosParaAdivinar[3] ; 
 
 
-				JOptionPane.showMessageDialog(null, "Excediste el número de intentos" + "Respuesta: "+ nums);
+				JOptionPane.showMessageDialog(null, "Excediste el número de intentos" + ". Respuesta: "+ nums);
 			}
 		
 		
-		}		
+		}	impResultado();	
 	}
+	
+	public void impResultado() {
+		mundo.getResultado().escribirResultados(resultadosImprimir);
+	}
+	
+
 
 }
